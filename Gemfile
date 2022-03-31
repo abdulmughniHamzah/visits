@@ -6,3 +6,4 @@ gem 'factory_bot'
 gem 'rspec'
 gem 'rspec-file_fixtures'
 gem 'rubocop-rspec', require: false
+gem 'simplecov', require: false
