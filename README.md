@@ -1,5 +1,5 @@
-#to setup
+to setup
 `bundle install`
 
-# to run rspec
+ to run rspec
 `./run.sh`
