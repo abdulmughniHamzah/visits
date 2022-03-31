@@ -7,10 +7,6 @@ RSpec.describe VisitsList do
   let(:list) do
     load_fixture('fixtures/webserver.yml')['visits']
   end
-  # before do
-  #   data = load_fixture('fixtures/webserver.yml')
-  #   @list = data['visits']
-  # end
 
   context 'when built' do
     it 'has the attribute `list`' do
