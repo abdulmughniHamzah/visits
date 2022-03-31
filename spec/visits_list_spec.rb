@@ -4,13 +4,16 @@ require_relative '../lib/visit'
 require_relative '../lib/visits_list'
 
 RSpec.describe VisitsList do
-  before(:all) do
-    data = load_fixture('fixtures/webserver.yml')
-    @list = data['visits']
+  let(:list) do
+    load_fixture('fixtures/webserver.yml')['visits']
   end
+  # before do
+  #   data = load_fixture('fixtures/webserver.yml')
+  #   @list = data['visits']
+  # end
 
   context 'when built' do
-    it 'has the attribute `list` ' do
+    it 'has the attribute `list`' do
       expect(visits_list).to respond_to('list')
     end
 
@@ -44,13 +47,13 @@ RSpec.describe VisitsList do
   end
 
   def visits_list
-    list = @list.map do |line|
+    mapped_list = list.map do |line|
       a_visit = instance_double(Visit)
       add_stubs(a_visit, line)
       a_visit
     end
 
-    build(:visits_list, list: list)
+    build(:visits_list, list: mapped_list)
   end
 
   def add_stubs(dbl, line)
